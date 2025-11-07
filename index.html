@@ -1,0 +1,378 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPNGC Corporate Plan Review Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h1>RPNGC Corporate Plan Mid-Term Review Survey</h1>
+    <p>Please fill out the form below to the best of your ability. Your feedback is crucial for our internal planning and budgeting decisions.</p>
+
+    <form action="http://localhost:3000/submit-form" method="POST">
+
+        <!-- ====================================================== -->
+        <!-- PART A: Professional and Bio Details                   -->
+        <!-- ====================================================== -->
+        <fieldset>
+            <legend>PART A: Professional and Bio Details</legend>
+            <div class="form-section">
+                <h3>1. Please provide the details below (fill where applicable):</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="program-area">Program / Activity Area</label>
+                        <input type="text" id="program-area" name="program_area">
+                    </div>
+                    <div class="form-group">
+                        <label for="program-manager">Program / Activity Manager</label>
+                        <input type="text" id="program-manager" name="program_manager">
+                    </div>
+                    <div class="form-group">
+                        <label for="section-head">Section/Unit Head</label>
+                        <input type="text" id="section-head" name="section_head">
+                    </div>
+                    <div class="form-group">
+                        <label for="rank">Rank</label>
+                        <input type="text" id="rank" name="rank">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender">
+                            <option value="">--Please choose an option--</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="years-service">Years of Service</label>
+                        <input type="number" id="years-service" name="years_service" min="0">
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- ====================================================== -->
+        <!-- PART B: Operational Corporate Areas                    -->
+        <!-- ====================================================== -->
+        <fieldset>
+            <legend>PART B: Operational Corporate Areas</legend>
+            
+            <!-- Question 1: General Policing -->
+            <div class="form-section">
+                <h3>1. General Policing (KRA-1 & 2)</h3>
+                
+                <div class="form-group">
+                    <label>a. How efficient is the current reporting systems for incidents and operational data?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="reporting_efficiency" value="very_efficient"> Very Efficient</label>
+                        <label><input type="radio" name="reporting_efficiency" value="satisfactory"> Satisfactory</label>
+                        <label><input type="radio" name="reporting_efficiency" value="needs_improvement"> Needs Improvement</label>
+                        <label><input type="radio" name="reporting_efficiency" value="poor"> Poor</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>b. Are there any community policing awareness and engagement programs in place?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="community_programs_exist" value="yes"> Yes</label>
+                        <label><input type="radio" name="community_programs_exist" value="no"> No</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>c. How effective is community policing awareness and engagement programs to crime reduction?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="community_program_effectiveness" value="very_effective"> Very Effective</label>
+                        <label><input type="radio" name="community_program_effectiveness" value="satisfactory"> Satisfactory</label>
+                        <label><input type="radio" name="community_program_effectiveness" value="needs_improvement"> Needs Improvement</label>
+                        <label><input type="radio" name="community_program_effectiveness" value="poor"> Poor</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>d. How effective is the current policing model in addressing emerging crimes? [E.g. Cybercrime, organized crime, sorcery related crimes, etc]</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="emerging_crimes_effectiveness" value="very_effective"> Very Effective</label>
+                        <label><input type="radio" name="emerging_crimes_effectiveness" value="satisfactory"> Satisfactory</label>
+                        <label><input type="radio" name="emerging_crimes_effectiveness" value="needs_improvement"> Needs Improvement</label>
+                        <label><input type="radio" name="emerging_crimes_effectiveness" value="poor"> Poor</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>e. Propose approaches to improve and strengthen the Police Operations and service delivery.</label>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Activities</th>
+                                    <th>Challenges<br><small>[State issues faced]</small></th>
+                                    <th>Mitigation<br><small>[State how challenges/issues were managed]</small></th>
+                                    <th>Recommendation<br><small>[Proposed approach implementation]</small></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="example-row">
+                                    <td>Response Time</td>
+                                    <td>Example: Shortage of Fuel and Manpower</td>
+                                    <td>Example: Increase community engagements</td>
+                                    <td>Example: Establish police posts at LLG levels.</td>
+                                </tr>
+                                <tr>
+                                    <td>Response Time</td>
+                                    <td><textarea name="response_time_challenges"></textarea></td>
+                                    <td><textarea name="response_time_mitigation"></textarea></td>
+                                    <td><textarea name="response_time_recommendation"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>Investigations</td>
+                                    <td><textarea name="investigations_challenges"></textarea></td>
+                                    <td><textarea name="investigations_mitigation"></textarea></td>
+                                    <td><textarea name="investigations_recommendation"></textarea></td>
+                                </tr>
+                                 <tr>
+                                    <td>Prosecutions</td>
+                                    <td><textarea name="prosecutions_challenges"></textarea></td>
+                                    <td><textarea name="prosecutions_mitigation"></textarea></td>
+                                    <td><textarea name="prosecutions_recommendation"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>Community Engagement</td>
+                                    <td><textarea name="community_engagement_challenges"></textarea></td>
+                                    <td><textarea name="community_engagement_mitigation"></textarea></td>
+                                    <td><textarea name="community_engagement_recommendation"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>Road Safety & Security</td>
+                                    <td><textarea name="road_safety_challenges"></textarea></td>
+                                    <td><textarea name="road_safety_mitigation"></textarea></td>
+                                    <td><textarea name="road_safety_recommendation"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>Maritime Security</td>
+                                    <td><textarea name="maritime_security_challenges"></textarea></td>
+                                    <td><textarea name="maritime_security_mitigation"></textarea></td>
+                                    <td><textarea name="maritime_security_recommendation"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>Air Support</td>
+                                    <td><textarea name="air_support_challenges"></textarea></td>
+                                    <td><textarea name="air_support_mitigation"></textarea></td>
+                                    <td><textarea name="air_support_recommendation"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>Intelligence Gathering</td>
+                                    <td><textarea name="intelligence_gathering_challenges"></textarea></td>
+                                    <td><textarea name="intelligence_gathering_mitigation"></textarea></td>
+                                    <td><textarea name="intelligence_gathering_recommendation"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>Specialist Training & Development</td>
+                                    <td><textarea name="specialist_training_challenges"></textarea></td>
+                                    <td><textarea name="specialist_training_mitigation"></textarea></td>
+                                    <td><textarea name="specialist_training_recommendation"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>Command & Control</td>
+                                    <td><textarea name="command_control_challenges"></textarea></td>
+                                    <td><textarea name="command_control_mitigation"></textarea></td>
+                                    <td><textarea name="command_control_recommendation"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>Weapons Safety & Security</td>
+                                    <td><textarea name="weapons_safety_challenges"></textarea></td>
+                                    <td><textarea name="weapons_safety_mitigation"></textarea></td>
+                                    <td><textarea name="weapons_safety_recommendation"></textarea></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        
+        <!-- ====================================================== -->
+        <!-- PART C: ADMINISTRATIVE CORPORATE AREAS                 -->
+        <!-- ====================================================== -->
+        <fieldset>
+            <legend>PART C: Administrative Corporate Areas</legend>
+
+            <!-- C1: Policy and Planning -->
+            <div class="form-section">
+                 <h3>1. Policy and Planning (KRA-3)</h3>
+                 <!-- ... (add all questions from Part C similarly) ... -->
+            </div>
+            
+            <!-- C2: Leadership, Professionalism and Discipline -->
+            <div class="form-section">
+                 <h3>2. Leadership, Professionalism and Discipline (KRA-3)</h3>
+                 <!-- ... (add all questions from Part C similarly) ... -->
+            </div>
+
+            <!-- C3: Financial Management & Administration -->
+            <div class="form-section">
+                <h3>3. Financial Management & Administration (KRA-3)</h3>
+                <div class="form-group">
+                    <label>a. What specific resource limitations do you face in your role? [Select all that apply]</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="resource_limitations[]" value="leadership"> Leadership</label>
+                        <label><input type="checkbox" name="resource_limitations[]" value="finance"> Finance</label>
+                        <label><input type="checkbox" name="resource_limitations[]" value="workforce"> Workforce/Manpower</label>
+                        <label><input type="checkbox" name="resource_limitations[]" value="infrastructure"> Infrastructure</label>
+                        <label><input type="checkbox" name="resource_limitations[]" value="equipment"> Equipment & Logistics</label>
+                        <label><input type="checkbox" name="resource_limitations[]" value="ict"> Communications ICT</label>
+                    </div>
+                    <div class="form-group-inline">
+                        <label for="resource_other">Other (please specify):</label>
+                        <input type="text" id="resource_other" name="resource_limitations_other" class="inline-text-input">
+                    </div>
+                </div>
+                 <!-- ... (add remaining questions from C3) ... -->
+            </div>
+            
+            <!-- Add other sections of Part C here in the same manner -->
+
+        </fieldset>
+
+        <!-- ====================================================== -->
+        <!-- PART D: Proposed Strategies, Activities and Action     -->
+        <!-- ====================================================== -->
+        <fieldset>
+            <legend>PART D: Proposed Strategies, Activities and Action [for 2026 – 2030]</legend>
+             <div class="form-group">
+                    <label>Please propose strategies for the next 5 years.</label>
+                    <div class="table-container">
+                        <table id="strategy-table">
+                            <thead>
+                                <tr>
+                                    <th>KRA No.</th>
+                                    <th>Strategy</th>
+                                    <th>Activity</th>
+                                    <th>Actions Required</th>
+                                    <th colspan="5">Period of Implementation</th>
+                                    <th>Outcome Indicator</th>
+                                    <th>Estimated Cost</th>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th>2026</th>
+                                    <th>2027</th>
+                                    <th>2028</th>
+                                    <th>2029</th>
+                                    <th>2030</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="example-row">
+                                    <td>KRA - 1</td>
+                                    <td>Maximise Public Safety</td>
+                                    <td>Promote Road (National Roads and highway) safety and security</td>
+                                    <td>Review and formulate Policy and Strategy</td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Policy & strategy Approved for Implementation</td>
+                                    <td>K100, 000</td>
+                                </tr>
+                                <!-- Repeat this block for users to add new rows -->
+                                <tr>
+                                    <td><input type="text" name="kra_no_1"></td>
+                                    <td><textarea name="strategy_1"></textarea></td>
+                                    <td><textarea name="activity_1"></textarea></td>
+                                    <td><textarea name="actions_1"></textarea></td>
+                                    <td><input type="checkbox" name="year_2026_1"></td>
+                                    <td><input type="checkbox" name="year_2027_1"></td>
+                                    <td><input type="checkbox" name="year_2028_1"></td>
+                                    <td><input type="checkbox" name="year_2029_1"></td>
+                                    <td><input type="checkbox" name="year_2030_1"></td>
+                                    <td><textarea name="outcome_1"></textarea></td>
+                                    <td><input type="text" name="cost_1"></td>
+                                </tr>
+                                 <tr>
+                                    <td><input type="text" name="kra_no_2"></td>
+                                    <td><textarea name="strategy_2"></textarea></td>
+                                    <td><textarea name="activity_2"></textarea></td>
+                                    <td><textarea name="actions_2"></textarea></td>
+                                    <td><input type="checkbox" name="year_2026_2"></td>
+                                    <td><input type="checkbox" name="year_2027_2"></td>
+                                    <td><input type="checkbox" name="year_2028_2"></td>
+                                    <td><input type="checkbox" name="year_2029_2"></td>
+                                    <td><input type="checkbox" name="year_2030_2"></td>
+                                    <td><textarea name="outcome_2"></textarea></td>
+                                    <td><input type="text" name="cost_2"></td>
+                                </tr>
+                                <!-- Add more empty rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        </fieldset>
+
+        <!-- ====================================================== -->
+        <!-- PART E: Declaration                                    -->
+        <!-- ====================================================== -->
+        <fieldset>
+            <legend>PART E: Declaration</legend>
+            <div class="declaration-text">
+                <p>I hereby consent to participate in this survey to support the Mid Term Review of the RPNGC Corporate Plan (2021-2030).</p>
+                <p>I understand that the information I provide will be used solely for the purpose of informing internal planning and budgeting decisions, and will be treated with confidentiality.</p>
+            </div>
+            <div class="form-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="consent" value="given" required>
+                    I consent to participate in this survey.
+                </label>
+            </div>
+
+            <div class="signature-section">
+                <div class="signature-block">
+                    <div class="form-group">
+                        <label for="participant-name">Participant Name:</label>
+                        <input type="text" id="participant-name" name="participant_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="participant-signature">Signature & Stamp:</label>
+                        <input type="text" id="participant-signature" name="participant_signature" placeholder="Type name to sign">
+                    </div>
+                     <div class="form-group">
+                        <label for="participant-date">Date:</label>
+                        <input type="date" id="participant-date" name="participant_date">
+                    </div>
+                </div>
+                <div class="signature-block">
+                    <div class="form-group">
+                        <label for="facilitator-name">Facilitator Name:</label>
+                        <input type="text" id="facilitator-name" name="facilitator_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="facilitator-signature">Signature & Stamp:</label>
+                        <input type="text" id="facilitator-signature" name="facilitator_signature" placeholder="Type name to sign">
+                    </div>
+                    <div class="form-group">
+                        <label for="facilitator-date">Date:</label>
+                        <input type="date" id="facilitator-date" name="facilitator_date">
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <button type="submit" class="submit-btn">Submit Form</button>
+
+    </form>
+</div>
+
+</body>
+</html>
+```
